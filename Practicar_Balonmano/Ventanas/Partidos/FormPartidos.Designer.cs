@@ -42,20 +42,20 @@
             this.lblNumGolesLocal = new System.Windows.Forms.Label();
             this.lblGolesVisitante = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dgEquipos = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgEquipoLocal = new System.Windows.Forms.DataGridView();
+            this.dgEquipoVisitante = new System.Windows.Forms.DataGridView();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbEscudoVisitante = new System.Windows.Forms.PictureBox();
+            this.pbEscudoLocal = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgEquipos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEquipoLocal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEquipoVisitante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscudoVisitante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscudoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
@@ -88,24 +88,29 @@
             this.cmbCategorías.Name = "cmbCategorías";
             this.cmbCategorías.Size = new System.Drawing.Size(206, 27);
             this.cmbCategorías.TabIndex = 2;
+            this.cmbCategorías.SelectedIndexChanged += new System.EventHandler(this.cmbCategorías_SelectedIndexChanged);
             // 
             // cmbEquipoLocal
             // 
+            this.cmbEquipoLocal.Enabled = false;
             this.cmbEquipoLocal.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEquipoLocal.FormattingEnabled = true;
             this.cmbEquipoLocal.Location = new System.Drawing.Point(233, 71);
             this.cmbEquipoLocal.Name = "cmbEquipoLocal";
             this.cmbEquipoLocal.Size = new System.Drawing.Size(206, 27);
             this.cmbEquipoLocal.TabIndex = 3;
+            this.cmbEquipoLocal.SelectedIndexChanged += new System.EventHandler(this.cmbEquipoLocal_SelectedIndexChanged);
             // 
             // cmbEquipoVisitante
             // 
+            this.cmbEquipoVisitante.Enabled = false;
             this.cmbEquipoVisitante.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEquipoVisitante.FormattingEnabled = true;
             this.cmbEquipoVisitante.Location = new System.Drawing.Point(715, 74);
             this.cmbEquipoVisitante.Name = "cmbEquipoVisitante";
             this.cmbEquipoVisitante.Size = new System.Drawing.Size(206, 27);
             this.cmbEquipoVisitante.TabIndex = 5;
+            this.cmbEquipoVisitante.SelectedIndexChanged += new System.EventHandler(this.cmbEquipoVisitante_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -116,6 +121,7 @@
             this.label3.Size = new System.Drawing.Size(126, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "EQUIPO LOCAL:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -150,7 +156,7 @@
             // 
             this.lblNombrePabellón.AutoSize = true;
             this.lblNombrePabellón.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombrePabellón.Location = new System.Drawing.Point(467, 153);
+            this.lblNombrePabellón.Location = new System.Drawing.Point(430, 162);
             this.lblNombrePabellón.Name = "lblNombrePabellón";
             this.lblNombrePabellón.Size = new System.Drawing.Size(57, 19);
             this.lblNombrePabellón.TabIndex = 9;
@@ -199,42 +205,45 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "GOLES LOCAL: ";
             // 
-            // dgEquipos
+            // dgEquipoLocal
             // 
-            this.dgEquipos.AllowUserToAddRows = false;
-            this.dgEquipos.AllowUserToDeleteRows = false;
-            this.dgEquipos.AllowUserToOrderColumns = true;
-            this.dgEquipos.AllowUserToResizeColumns = false;
-            this.dgEquipos.AllowUserToResizeRows = false;
-            this.dgEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEquipos.Location = new System.Drawing.Point(113, 352);
-            this.dgEquipos.MultiSelect = false;
-            this.dgEquipos.Name = "dgEquipos";
-            this.dgEquipos.ReadOnly = true;
-            this.dgEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgEquipos.Size = new System.Drawing.Size(329, 198);
-            this.dgEquipos.TabIndex = 16;
+            this.dgEquipoLocal.AllowUserToAddRows = false;
+            this.dgEquipoLocal.AllowUserToDeleteRows = false;
+            this.dgEquipoLocal.AllowUserToOrderColumns = true;
+            this.dgEquipoLocal.AllowUserToResizeColumns = false;
+            this.dgEquipoLocal.AllowUserToResizeRows = false;
+            this.dgEquipoLocal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgEquipoLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEquipoLocal.Enabled = false;
+            this.dgEquipoLocal.Location = new System.Drawing.Point(113, 352);
+            this.dgEquipoLocal.MultiSelect = false;
+            this.dgEquipoLocal.Name = "dgEquipoLocal";
+            this.dgEquipoLocal.ReadOnly = true;
+            this.dgEquipoLocal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgEquipoLocal.Size = new System.Drawing.Size(329, 198);
+            this.dgEquipoLocal.TabIndex = 16;
             // 
-            // dataGridView1
+            // dgEquipoVisitante
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(548, 352);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(329, 198);
-            this.dataGridView1.TabIndex = 17;
+            this.dgEquipoVisitante.AllowUserToAddRows = false;
+            this.dgEquipoVisitante.AllowUserToDeleteRows = false;
+            this.dgEquipoVisitante.AllowUserToOrderColumns = true;
+            this.dgEquipoVisitante.AllowUserToResizeColumns = false;
+            this.dgEquipoVisitante.AllowUserToResizeRows = false;
+            this.dgEquipoVisitante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgEquipoVisitante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEquipoVisitante.Enabled = false;
+            this.dgEquipoVisitante.Location = new System.Drawing.Point(548, 352);
+            this.dgEquipoVisitante.MultiSelect = false;
+            this.dgEquipoVisitante.Name = "dgEquipoVisitante";
+            this.dgEquipoVisitante.ReadOnly = true;
+            this.dgEquipoVisitante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgEquipoVisitante.Size = new System.Drawing.Size(329, 198);
+            this.dgEquipoVisitante.TabIndex = 17;
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Enabled = false;
             this.pictureBox4.Image = global::Practicar_Balonmano.Properties.Resources.boton_menos;
             this.pictureBox4.Location = new System.Drawing.Point(27, 460);
             this.pictureBox4.Name = "pictureBox4";
@@ -245,6 +254,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = global::Practicar_Balonmano.Properties.Resources.mas;
             this.pictureBox3.Location = new System.Drawing.Point(27, 368);
             this.pictureBox3.Name = "pictureBox3";
@@ -253,24 +263,29 @@
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox2
+            // pbEscudoVisitante
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(699, 125);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(178, 178);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.pbEscudoVisitante.Enabled = false;
+            this.pbEscudoVisitante.Location = new System.Drawing.Point(699, 125);
+            this.pbEscudoVisitante.Name = "pbEscudoVisitante";
+            this.pbEscudoVisitante.Size = new System.Drawing.Size(178, 178);
+            this.pbEscudoVisitante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEscudoVisitante.TabIndex = 11;
+            this.pbEscudoVisitante.TabStop = false;
             // 
-            // pictureBox1
+            // pbEscudoLocal
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(113, 125);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 178);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.pbEscudoLocal.Enabled = false;
+            this.pbEscudoLocal.Location = new System.Drawing.Point(113, 125);
+            this.pbEscudoLocal.Name = "pbEscudoLocal";
+            this.pbEscudoLocal.Size = new System.Drawing.Size(178, 178);
+            this.pbEscudoLocal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEscudoLocal.TabIndex = 10;
+            this.pbEscudoLocal.TabStop = false;
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Enabled = false;
             this.pictureBox5.Image = global::Practicar_Balonmano.Properties.Resources.boton_menos;
             this.pictureBox5.Location = new System.Drawing.Point(896, 460);
             this.pictureBox5.Name = "pictureBox5";
@@ -281,6 +296,7 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Enabled = false;
             this.pictureBox6.Image = global::Practicar_Balonmano.Properties.Resources.mas;
             this.pictureBox6.Location = new System.Drawing.Point(896, 368);
             this.pictureBox6.Name = "pictureBox6";
@@ -299,14 +315,14 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dgEquipos);
+            this.Controls.Add(this.dgEquipoVisitante);
+            this.Controls.Add(this.dgEquipoLocal);
             this.Controls.Add(this.lblGolesVisitante);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblNumGolesLocal);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbEscudoVisitante);
+            this.Controls.Add(this.pbEscudoLocal);
             this.Controls.Add(this.lblNombrePabellón);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpFecha);
@@ -320,12 +336,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPartidos";
             this.Text = "FormPartidos";
-            ((System.ComponentModel.ISupportInitialize)(this.dgEquipos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormPartidos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgEquipoLocal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEquipoVisitante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscudoVisitante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscudoLocal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
@@ -345,14 +362,14 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblNombrePabellón;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbEscudoLocal;
+        private System.Windows.Forms.PictureBox pbEscudoVisitante;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblNumGolesLocal;
         private System.Windows.Forms.Label lblGolesVisitante;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.DataGridView dgEquipos;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dgEquipoLocal;
+        public System.Windows.Forms.DataGridView dgEquipoVisitante;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
