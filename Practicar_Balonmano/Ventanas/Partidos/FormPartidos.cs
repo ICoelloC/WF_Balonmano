@@ -67,6 +67,7 @@ namespace Practicar_Balonmano.Ventanas.Partidos
         private void cmbEquipoLocal_SelectedIndexChanged(object sender, EventArgs e)
         {
             string nombre = cmbEquipoLocal.SelectedItem.ToString();
+            string categoria = cmbCategorías.SelectedItem.ToString();
             using (balonmanoEntities objBD = new balonmanoEntities())
             {
                 var EquiposCategoria = from eq in objBD.EQUIPOS
@@ -91,6 +92,51 @@ namespace Practicar_Balonmano.Ventanas.Partidos
                     }
                     CargarDataGridEquipo(nombre);
                 }
+            }
+            cmbEquipoVisitante.Enabled = true;
+            CargarComboEquipo(nombre, categoria);
+        }
+
+        private void CargarComboEquiposVisitantes(string nombre, string categoria)
+        {
+            using (balonmanoEntities objBD = new balonmanoEntities())
+            {
+                var equiposVisitantes = from eq in objBD.EQUIPOS
+                                        where eq.Categoria.Equals(categoria) && !eq.Nombre.Equals(nombre)
+                                        select new
+                                        {
+                                            Nombre = eq.Nombre,
+                                            IDEquipo = eq.Id_equipo,
+                                            Escudo = eq.Escudo,
+                                            Pabellon = eq.Pabellon
+                                        };
+                foreach(var equipo in equiposVisitantes.ToList())
+                {
+                    cmbEquipoVisitante.Items.Add(equipo.Nombre);
+                    if (equipo.Escudo != null)
+                    {
+                        MyData = equipo.Escudo;
+                        MemoryStream stream = new MemoryStream(MyData);
+                        pbEscudoVisitante.Image = Image.FromStream(stream);
+                    }
+                    CargarDataGridEquipoVisitante(nombre);
+                }
+            }
+        }
+
+        private void CargarDataGridEquipoVisitante(string nombre)
+        {
+            using (balonmanoEntities objBD = new balonmanoEntities())
+            {
+                var jugadoresEquipo = from eq in objBD.EQUIPOS
+                                      from j in objBD.JUGADORES
+                                      where eq.Nombre.Equals(nombre) && eq.Id_equipo == j.Equipo
+                                      select new
+                                      {
+                                          j.Nombre,
+                                          j.GOLES_PARTIDO
+                                      };
+                dgEquipoVisitante.DataSource = jugadoresEquipo.ToList();
             }
         }
 
