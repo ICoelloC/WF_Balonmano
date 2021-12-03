@@ -50,6 +50,7 @@
             this.pbEscudoLocal = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.dsBD = new Practicar_Balonmano.dsBD();
             ((System.ComponentModel.ISupportInitialize)(this.dgEquipoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgEquipoVisitante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbEscudoLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsBD)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -305,6 +307,11 @@
             this.pictureBox6.TabIndex = 20;
             this.pictureBox6.TabStop = false;
             // 
+            // dsBD
+            // 
+            this.dsBD.DataSetName = "dsBD";
+            this.dsBD.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FormPartidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,6 +352,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbEscudoLocal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsBD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,5 +382,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private dsBD dsBD;
     }
 }
